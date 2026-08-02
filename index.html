@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Apology Request for Mitali ❤️</title>
+    <!-- Fonts: Plus Jakarta Sans for UI, Playfair Display for Headings, Caveat for Handwritten Letter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome for crisp icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Background Canvas for Particles and Hearts -->
+    <canvas id="bg-canvas"></canvas>
+    <!-- Confetti Canvas for Victory / Yes Moment -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+      <div class="loader-content">
+        <div class="heart-pulse-container">
+          <div class="heart-pulse">❤️</div>
+          <div class="pulse-ring"></div>
+        </div>
+        <h2 class="loader-title">Crafting a small story...</h2>
+        <div class="loader-bar-bg">
+          <div class="loader-bar-fill" id="loader-fill"></div>
+        </div>
+        <p class="loader-sub" id="loader-status">Preparing memories (0%)</p>
+      </div>
+    </div>
+
+    <!-- Header Control Bar -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="story-brand">
+          <span class="brand-heart">💖</span>
+          <span class="brand-text">Apology Request for Mitali</span>
+        </div>
+      </div>
+
+      <!-- Story Progress Bar Container -->
+      <div class="story-progress-wrapper">
+        <div class="story-progress-track">
+          <div class="story-progress-fill" id="story-progress"></div>
+        </div>
+        <span class="story-step-badge" id="step-indicator">1 / 8</span>
+      </div>
+
+      <div class="header-right" style="display: flex; gap: 8px; align-items: center;">
+        <!-- Photo Upload / Customizer Button -->
+        <button id="photo-modal-btn" class="icon-btn" aria-label="Change Photos" title="Upload/Change Photos">
+          <i class="fa-solid fa-camera"></i>
+        </button>
+        <!-- Audio Ambient Toggle -->
+        <button id="audio-toggle-btn" class="icon-btn" aria-label="Toggle Background Music">
+          <i class="fa-solid fa-volume-xmark" id="audio-icon"></i>
+          <span class="sound-wave-bars hidden" id="sound-waves">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Container holding story pages -->
+    <main class="story-container">
+
+      <!-- ================= PAGE 1: WELCOME ================= -->
+      <section class="page-section active" id="page-1" data-step="1">
+        <div class="glass-card welcome-card">
+          <div class="badge-pill">
+            <i class="fa-solid fa-hand-holding-heart"></i> Sincere Apology
+          </div>
+          <h1 class="hero-title">
+            Mitali, I made a mistake... <br />
+            <span class="gradient-text">Please hear my apology. 🥺</span>
+          </h1>
+          <p class="hero-subtitle">
+            I built this special page because a simple text message wasn't enough to show how truly sorry I am.
+          </p>
+          <div class="action-wrapper">
+            <button class="btn btn-primary ripple-btn" id="btn-page-1">
+              <span>Read My Apology 💖</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 2: FUNNY INTRO (MY PHOTO) ================= -->
+      <section class="page-section" id="page-2" data-step="2">
+        <div class="glass-card story-card">
+          <div class="photo-frame floating-frame" onclick="document.getElementById('photo-modal').classList.remove('hidden')" title="Click to upload your photo" style="cursor: pointer;">
+            <img id="img-my-photo-1" src="" alt="My Photo" class="portrait-img" loading="lazy" />
+            <div class="photo-glow"></div>
+            <div class="photo-tag">Prateek 🙋‍♂️ <span style="font-size: 0.7rem; opacity: 0.8; margin-left:4px;">(📷 Tap to change)</span></div>
+          </div>
+          
+          <div class="typewriter-box">
+            <p id="typewriter-p2" class="typewriter-text"></p>
+          </div>
+
+          <div class="action-wrapper">
+            <button class="btn btn-secondary ripple-btn" id="btn-page-2">
+              <span>Keep Reading</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 3: MY PHOTO (FUN FACT) ================= -->
+      <section class="page-section" id="page-3" data-step="3">
+        <div class="glass-card story-card">
+          <div class="photo-frame float-alt-frame" onclick="document.getElementById('photo-modal').classList.remove('hidden')" title="Click to upload your photo" style="cursor: pointer;">
+            <img id="img-my-photo-2" src="" alt="My Photo Fun Fact" class="portrait-img" loading="lazy" />
+            <div class="photo-glow"></div>
+            <div class="photo-tag">Honest Truth 💡 <span style="font-size: 0.7rem; opacity: 0.8; margin-left:4px;">(📷 Tap to change)</span></div>
+          </div>
+
+          <div class="card-text-content">
+            <span class="card-eyebrow">A Confession From My Heart</span>
+            <h2 class="card-heading">The Truth:</h2>
+            <div class="story-paragraph">
+              <p>I spent hours trying to figure out how to say sorry properly...</p>
+              <p class="highlight-text">because no ordinary text message felt sincere enough for how much I value you. 🙈❤️</p>
+            </div>
+          </div>
+
+          <div class="action-wrapper">
+            <button class="btn btn-secondary ripple-btn" id="btn-page-3">
+              <span>Next</span>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 4: HER PHOTO (MITALI) ================= -->
+      <section class="page-section" id="page-4" data-step="4">
+        <div class="glass-card story-card her-card">
+          <div class="photo-frame heart-glow-frame" onclick="document.getElementById('photo-modal').classList.remove('hidden')" title="Click to upload Mitali's photo" style="cursor: pointer;">
+            <img id="img-her-photo" src="" alt="Mitali's Photo" class="portrait-img" loading="lazy" />
+            <div class="photo-glow pink-glow"></div>
+            <div class="photo-tag pink-tag">Mitali's Smile ✨ <span style="font-size: 0.7rem; opacity: 0.8; margin-left:4px;">(📷 Tap to change)</span></div>
+          </div>
+
+          <div class="card-text-content">
+            <div class="story-paragraph romantic-paragraph">
+              <p class="lead-quote">"This beautiful smile of yours means the world to me."</p>
+              <p class="sub-quote">I never want to be the reason it fades. <br /><span class="accent-pink">I am truly sorry, Mitali ✨</span></p>
+            </div>
+          </div>
+
+          <div class="action-wrapper">
+            <button class="btn btn-pink ripple-btn" id="btn-page-4">
+              <span>Next</span>
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 5: MINI GAME ================= -->
+      <section class="page-section" id="page-5" data-step="5">
+        <div class="glass-card game-card">
+          <div class="game-header">
+            <span class="badge-pill gold-pill"><i class="fa-solid fa-heart-circle-check"></i> Apology Request</span>
+            <h2 class="game-title">Guess what Prateek is asking for?</h2>
+            <p class="game-subtitle">Choose the answer straight from my heart! (Choose 1 option)</p>
+          </div>
+
+          <div class="game-options-grid">
+            <button class="game-option-btn ripple-btn" data-correct="false" id="opt-cake">
+              <span class="option-icon">🍕</span>
+              <span class="option-label">Free Pizza & Ice Cream</span>
+            </button>
+
+            <button class="game-option-btn ripple-btn" data-correct="false" id="opt-million">
+              <span class="option-icon">💸</span>
+              <span class="option-label">Lifetime Immunity</span>
+            </button>
+
+            <button class="game-option-btn ripple-btn correct-option" data-correct="true" id="opt-question">
+              <span class="option-icon">❤️</span>
+              <span class="option-label">Your Forgiveness & A Fresh Start</span>
+            </button>
+          </div>
+
+          <div id="game-feedback" class="game-feedback hidden"></div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 6: MEMORY GALLERY ================= -->
+      <section class="page-section" id="page-6" data-step="6">
+        <div class="glass-card gallery-card">
+          <div class="gallery-header">
+            <span class="badge-pill"><i class="fa-solid fa-film"></i> Precious Memories</span>
+            <h2 class="gallery-title">Moments We Shared</h2>
+          </div>
+
+          <!-- Interactive Memory Slides/Cards Container -->
+          <div class="memory-slider" id="memory-slider">
+            <!-- Dynamically populated via JS config -->
+          </div>
+
+          <!-- Memory Slider Controls -->
+          <div class="slider-controls">
+            <button class="nav-btn icon-only" id="prev-memory" aria-label="Previous Memory">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div class="slider-dots" id="slider-dots"></div>
+            <button class="nav-btn icon-only" id="next-memory" aria-label="Next Memory">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="action-wrapper margin-top-sm">
+            <button class="btn btn-secondary ripple-btn" id="btn-page-6">
+              <span>Read Apology Letter</span>
+              <i class="fa-solid fa-envelope-open-text"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 7: OPEN LETTER ================= -->
+      <section class="page-section" id="page-7" data-step="7">
+        <div class="glass-card letter-card">
+          <div class="letter-stamp">
+            <i class="fa-solid fa-paper-plane"></i>
+          </div>
+          <div class="letter-paper">
+            <h2 class="letter-heading" id="letter-title">Dearest Mitali,</h2>
+            <div class="letter-body" id="letter-body">
+              <!-- Written lines from JS config -->
+            </div>
+            <div class="letter-signature" id="letter-sign">
+              — Yours sincerely, Prateek ❤️
+            </div>
+          </div>
+
+          <div class="action-wrapper margin-top-md">
+            <button class="btn btn-primary ripple-btn" id="btn-page-7">
+              <span>Final Request</span>
+              <i class="fa-solid fa-heart"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 8: FINAL QUESTION ================= -->
+      <section class="page-section" id="page-8" data-step="8">
+        <div class="glass-card final-card" id="final-card-main">
+          <div id="final-question-box" class="final-box">
+            <div class="final-icon-pulse">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <h1 class="final-question-text">Mitali... Do you forgive me? ❤️</h1>
+            <p class="final-subtext">No heavy pressure — I'd just love to make it up to you over coffee, cake, or a long warm conversation ☕️🍰✨</p>
+
+            <div class="final-buttons-container">
+              <button class="btn btn-yes ripple-btn" id="btn-yes">
+                <i class="fa-solid fa-heart"></i>
+                <span>❤️ Yes, I forgive you!</span>
+              </button>
+
+              <button class="btn btn-no" id="btn-no">
+                <span>🙈 Still thinking...</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Output Box for YES choice -->
+          <div id="final-response-yes" class="response-box hidden">
+            <div class="celebration-icon">🎉</div>
+            <h2 class="response-heading">Thank you so much Mitali ❤️</h2>
+            <p class="response-message">Your forgiveness means everything to me! I promise to make you smile every day.</p>
+            <p class="response-sub">An instant email notification that you accepted my apology has been sent to <strong>pprateek26@gmail.com</strong>! 💌</p>
+            <div class="response-details" id="yes-meta-details"></div>
+            <a href="mailto:pprateek26@gmail.com?subject=I%20forgive%20you%20Prateek%20❤️&body=Hey%20Prateek,%20I%20saw%20your%20apology%20website%20and%20I%20forgive%20you!" class="btn btn-pink margin-top-sm" style="text-decoration: none;">
+              <i class="fa-solid fa-paper-plane"></i> Send Prateek a direct message
+            </a>
+            <button class="btn btn-outline margin-top-sm" id="btn-restart-yes">
+              <i class="fa-solid fa-rotate-left"></i> Replay Story
+            </button>
+          </div>
+
+          <!-- Output Box for NOT TODAY choice -->
+          <div id="final-response-no" class="response-box hidden">
+            <div class="peace-icon">🌸</div>
+            <h2 class="response-heading">Thank you for taking the time to see this.</h2>
+            <p class="response-message">I truly appreciate it.</p>
+            <p class="response-sub">Wishing you nothing but happiness and warm smiles ahead.</p>
+            <button class="btn btn-outline margin-top-md" id="btn-restart-no">
+              <i class="fa-solid fa-rotate-left"></i> Replay Story
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Photo Customizer Modal -->
+    <div id="photo-modal" class="modal-overlay hidden">
+      <div class="glass-card modal-card">
+        <div class="modal-header">
+          <h3 class="modal-title"><i class="fa-solid fa-camera"></i> Customize Story Photos</h3>
+          <button id="close-modal-btn" class="icon-btn close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <p class="modal-sub">Upload your own photos or paste image links to see them live in the story!</p>
+
+        <div class="photo-inputs-grid">
+          <div class="photo-input-group">
+            <label><i class="fa-solid fa-user"></i> My Photo #1 (Page 2 - Prateek)</label>
+            <input type="file" id="input-my-photo-1-file" accept="image/*" class="file-input" />
+          </div>
+
+          <div class="photo-input-group">
+            <label><i class="fa-solid fa-lightbulb"></i> My Photo #2 (Page 3 - Couple)</label>
+            <input type="file" id="input-my-photo-2-file" accept="image/*" class="file-input" />
+          </div>
+
+          <div class="photo-input-group">
+            <label><i class="fa-solid fa-heart"></i> Mitali's Photo (Page 4)</label>
+            <input type="file" id="input-her-photo-file" accept="image/*" class="file-input" />
+          </div>
+
+          <div class="photo-input-group">
+            <label><i class="fa-solid fa-images"></i> Memory Gallery Photo #1</label>
+            <input type="file" id="input-mem-1-file" accept="image/*" class="file-input" />
+          </div>
+
+          <div class="photo-input-group">
+            <label><i class="fa-solid fa-images"></i> Memory Gallery Photo #2</label>
+            <input type="file" id="input-mem-2-file" accept="image/*" class="file-input" />
+          </div>
+
+          <div class="photo-input-group">
+            <label><i class="fa-solid fa-images"></i> Memory Gallery Photo #3</label>
+            <input type="file" id="input-mem-3-file" accept="image/*" class="file-input" />
+          </div>
+        </div>
+
+        <div class="action-wrapper margin-top-sm">
+          <button id="save-photos-btn" class="btn btn-primary ripple-btn">
+            <span>Apply Photos ✨</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Main JavaScript App Code -->
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "A Two Minute Story",
+  "description": "A cinematic, mobile-first interactive storytelling experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
