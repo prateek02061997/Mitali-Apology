@@ -131,7 +131,6 @@ class StoryApp {
     this.typewriterActive = false;
     this.typewriterIndex = 0;
 
-    this.loadSavedPhotos();
     this.initDOM();
     this.initBackgroundCanvas();
     this.initConfettiCanvas();

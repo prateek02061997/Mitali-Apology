@@ -58,10 +58,6 @@
       </div>
 
       <div class="header-right" style="display: flex; gap: 8px; align-items: center;">
-        <!-- Photo Upload / Customizer Button -->
-        <button id="photo-modal-btn" class="icon-btn" aria-label="Change Photos" title="Upload/Change Photos">
-          <i class="fa-solid fa-camera"></i>
-        </button>
         <!-- Audio Ambient Toggle -->
         <button id="audio-toggle-btn" class="icon-btn" aria-label="Toggle Background Music">
           <i class="fa-solid fa-volume-xmark" id="audio-icon"></i>
@@ -100,10 +96,10 @@
       <!-- ================= PAGE 2: FUNNY INTRO (MY PHOTO) ================= -->
       <section class="page-section" id="page-2" data-step="2">
         <div class="glass-card story-card">
-          <div class="photo-frame floating-frame" onclick="document.getElementById('photo-modal').classList.remove('hidden')" title="Click to upload your photo" style="cursor: pointer;">
+          <div class="photo-frame floating-frame">
             <img id="img-my-photo-1" src="" alt="My Photo" class="portrait-img" loading="lazy" />
             <div class="photo-glow"></div>
-            <div class="photo-tag">Prateek 🙋‍♂️ <span style="font-size: 0.7rem; opacity: 0.8; margin-left:4px;">(📷 Tap to change)</span></div>
+            <div class="photo-tag">Prateek 🙋‍♂️</div>
           </div>
           
           <div class="typewriter-box">
@@ -122,10 +118,10 @@
       <!-- ================= PAGE 3: MY PHOTO (FUN FACT) ================= -->
       <section class="page-section" id="page-3" data-step="3">
         <div class="glass-card story-card">
-          <div class="photo-frame float-alt-frame" onclick="document.getElementById('photo-modal').classList.remove('hidden')" title="Click to upload your photo" style="cursor: pointer;">
+          <div class="photo-frame float-alt-frame">
             <img id="img-my-photo-2" src="" alt="My Photo Fun Fact" class="portrait-img" loading="lazy" />
             <div class="photo-glow"></div>
-            <div class="photo-tag">Honest Truth 💡 <span style="font-size: 0.7rem; opacity: 0.8; margin-left:4px;">(📷 Tap to change)</span></div>
+            <div class="photo-tag">Honest Truth 💡</div>
           </div>
 
           <div class="card-text-content">
@@ -149,10 +145,10 @@
       <!-- ================= PAGE 4: HER PHOTO (MITALI) ================= -->
       <section class="page-section" id="page-4" data-step="4">
         <div class="glass-card story-card her-card">
-          <div class="photo-frame heart-glow-frame" onclick="document.getElementById('photo-modal').classList.remove('hidden')" title="Click to upload Mitali's photo" style="cursor: pointer;">
+          <div class="photo-frame heart-glow-frame">
             <img id="img-her-photo" src="" alt="Mitali's Photo" class="portrait-img" loading="lazy" />
             <div class="photo-glow pink-glow"></div>
-            <div class="photo-tag pink-tag">Mitali's Smile ✨ <span style="font-size: 0.7rem; opacity: 0.8; margin-left:4px;">(📷 Tap to change)</span></div>
+            <div class="photo-tag pink-tag">Mitali's Smile ✨</div>
           </div>
 
           <div class="card-text-content">
